@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Development
+coverage/
+
+# Dist
+server/dist/
+client/dist/
+
+# Other
+**/*.log
+.nyc_output/
+.awcache/

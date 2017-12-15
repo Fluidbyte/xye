@@ -1,0 +1,29 @@
+from: mhart/alpine-node:8
+env:
+  - PORT=8888
+expose:
+  - 8888:8888
+tasks:
+  env: env | sort
+  shell: /bin/sh
+  clean: rm -rf node_modules
+  install: yarn
+  build: yarn build
+  build:client: yarn build:client
+  build:server: yarn build:server
+  lint: yarn lint
+  lint:client: yarn lint:client
+  lint:server: yarn lint:server
+  test: yarn test
+  test:server: yarn test:server
+  test:server:watch: yarn test:server:watch
+  test:client: yarn test:client
+  test:client:watch: yarn test:client:watch
+  coverage:server: yarn coverage:server
+  coverage:client: yarn coverage:client
+  dev: yarn dev
+  all: |
+    rm -rf node_modules
+    yarn
+    yarn lint
+    yarn build
